@@ -1,0 +1,7 @@
+The Child Thread sleep count
+
+Main thread is starting to wait for 5 seconds
+
+The Child Thread sleep count is 2
+
+Main thread says : I cant wait more;

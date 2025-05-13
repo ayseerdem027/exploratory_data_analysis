@@ -6,9 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 import logging
-# this is a test file
-# this is a test file
-# this is a test file
+
 class Cases:
     def __init__(self, file_name):
         self.file = file_name

@@ -99,19 +99,9 @@ class Performance:
        pearson_test = self.data.corr(method='pearson', numeric_only=True)
        print(pearson_test)
             
-    def train_features_exam_score(self):
-        x = self.data[['study_hours_per_day', 'social_media_hours', 'netflix_hours', 'sleep_hours', 'mental_health_rating']]
-        y = self.data['exam_score']
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
-        model = LinearRegression()
-        model.fit(x_train, y_train)
-        y_pred = model.predict(x_test)
 
-        mse = mean_squared_error(y_test, y_pred)
-        r2 = r2_score(y_test, y_pred)
-        mse_root = np.sqrt(mse)
-        print(f"MSE root: {mse_root}")
-        print(f"R2: {r2}")
+        
+        
     def average_score_female(self):
         df = self.data
         if self.data.empty:
@@ -127,18 +117,26 @@ class Performance:
         avg_exam_score = df[df['study_hours_per_day'] == study_hours]['exam_score'].mean()
         print(f"Average exam score for {study_hours} is {avg_exam_score}")
     
+    def add_arrays(self):
+        a = np.array([1, 2, 3])
+        b = np.array([1, 2, 3])
+        c = np.array([1, 2, 3])
+        result = np.add(np.add(a,b), c)
+        print(result)
+    
     def main(self):
-        self.read_file()
-        self.drop_missing_values()
+        #self.read_file()
+        #self.drop_missing_values()
         #self.spearman_correlation()
-        self.chi2_contingency_analysis()
+        #self.chi2_contingency_analysis()
         #self.average_study_hours_for_high_score()
         #self.group_the_scores_and_avg_study_hour()
-        self.train_features_exam_score()
+        #self.train_features_exam_score()
         #self.corr_parent_edu_exam_score()
         #self.pearson_correlation_test()
         #self.average_exam_score_specific_study_hours(5)
         #self.average_score_female()
+        self.add_arrays()
 if __name__ == "__main__":
     pf = Performance()
     pf.main()        
